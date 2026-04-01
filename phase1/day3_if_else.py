@@ -1,19 +1,18 @@
-# age = int(input("enter your age"))
+age = int(input("enter your age"))
 
-# if age <= 18:
-#     print("underage")
-# else:
-#     print("legal age")   
+if age <= 18:
+    print("underage")
+else:
+    print("legal age")   
 
-91
 
-# number = int(input("enter an number"))
+number = int(input("enter an number"))
 
-# if number%2 == 0:
-#     print("number is even")
+if number%2 == 0:
+    print("number is even")
 
-# else:
-#     print("number is odd")
+else:
+    print("number is odd")
 
 
 grade = int(input("enter your grade"))
