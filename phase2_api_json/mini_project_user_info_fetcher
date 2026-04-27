@@ -1,0 +1,39 @@
+import requests
+
+
+def getUserData (url):
+
+    try:
+
+        reponse = requests.get(url)
+
+        if reponse.status_code == 404:
+            print("User not found")
+        else:
+            reponse.raise_for_status()
+            data = reponse.json()
+            print(data)
+
+    except requests.exceptions.ConnectionError:
+        print("No internet")
+    except requests.exceptions.InvalidURL:
+        print("Invalid url")
+    except requests.exceptions.Timeout:
+        print("Request timed out")
+    except requests.exceptions.HTTPError as e:
+        print(f"HTTP error: {e}")
+    except requests.exceptions.RequestException as e:
+        print(f"something went wrong: {e}") 
+    except Exception as e:
+        print(f"Something went wrong: {e}") 
+
+
+username = input("enter a username")
+
+url = f"https://api.github.com/users/{username}"
+
+getUserData(url)
+
+
+
+
